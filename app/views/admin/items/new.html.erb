@@ -1,0 +1,23 @@
+<h2>新規商品登録</h2>
+<%= form_with model: @item, url: new_admin_item_path do |f| %>
+    <h4>商品画像</h4>
+      <%= f.file_field :image, accept: "image/*" %>
+    <h4>商品名</h4>
+      <%= f.text_field :name %>
+    <h4>商品説明</h4>
+      <%= f.text_area :introduction %>
+    <h4>ジャンル</h4>
+      <%= f.select :genre_id, [["ケーキ", "ケーキ"], ["プリン", "プリン"], ["焼き菓子", "焼き菓子"], ["キャンディ", "キャンディ"]], include_blank: "選択して下さい" %>
+    <h4>税抜価格</h4>
+      <%= f.text_field :price %>
+    <h4>販売ステータス</h4>
+    <div class=”field”>
+     <% %w(販売中 販売停止中).each.with_index do |is_active,i| %>
+    <label>
+      <%= f.check_box  :is_active, {multiple: true}, is_active, nil %>
+      <%= is_active %>
+    </label>
+    <% end %>
+    </div>
+    <%= f.submit '新規登録' %>
+  <% end %>

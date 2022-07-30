@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+        <table class="list-group">
+          <tr scope="col"><td class="list-group-item">ジャンル検索</td></tr>
+          <% @admin_genres_index.each do |genre| %>
+          <tr>
+            <td class="list-group-item">
+              <%= genre.name %>
+            </td>
+          <tr>
+          <% end %>
+        </table>
+    </div>
+    <div class="col-sm">
+     <h3>商品一覧</h3>
+
+    </div>
+  </div>
+</div>

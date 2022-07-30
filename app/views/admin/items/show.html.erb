@@ -1,0 +1,13 @@
+<div><h2>商品詳細</h2>
+<% @item.each do |item| %>
+<div>
+  <%= image_tag item.get_image %>
+  <p><%= image_tag 'sample-author1.jpg' %></p>
+  <p>商品名：<%= item.name %></p>
+  <p>商品説明：<%= item.introduction %></p>
+  <p>ジャンル：<%= item. %></p>
+  <p>税抜価格：<%= item.price %></p>
+  <p>販売ステータス：<%= item.is_active %></p>
+</div>
+<% end %>
+</div>

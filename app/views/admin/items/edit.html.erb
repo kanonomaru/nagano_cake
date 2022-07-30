@@ -1,0 +1,13 @@
+<h2>商品編集</h2>
+<%= form_with model: @item, url: admin_item_path(@item.id), method:patch do |f| %>
+<div>
+  <%= image_tag item.get_image %>
+  <p><%= image_tag 'sample-author1.jpg' %></p>
+  <p>商品名：<%= item.name %></p>
+  <p>商品説明：<%= item.introduction %></p>
+  <p>ジャンル：<%= item. %></p>
+  <p>税抜価格：<%= item.price %></p>
+  <p>販売ステータス：<%= item.is_active %></p>
+  <p><%= f.submit "変更を保存" %><p>
+</div>
+<% end %>
