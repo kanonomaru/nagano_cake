@@ -1,5 +1,5 @@
 <h3>配送先登録/一覧</h3>
-<%= form_with model: @addresses do |f| %>
+<%= form_with model: @address, url: public_addresses_path(@address.id) do |f| %>
   <div class="field">
     <%= f.label :postal_code, "郵便番号(ハイフンなし)" %>
     <%= f.text_field :postal_code, autofocus: true %>
@@ -13,9 +13,23 @@
   <div class="field">
     <%= f.label :name, "宛名" %>
     <%= f.text_field :name, autofocus: true %>
-  </div>
-
-  <div class="actions">
     <%= f.submit "新規登録" %>
+  </div>
+  <% end %>
+  <div>
+  <%= @addresses.each do |address| %>
+        <table border="1">
+            <tr>
+                <th>郵便番号</th>
+                <td>住所</td>
+                <td>宛名</td>
+            </tr>
+            <tr>
+                <th><%= address.postal_code %></th>
+                <td><%= address.address %></td>
+                <td><%= address.name %></td>
+            </tr>
+        </table>
+
   </div>
   <% end %>

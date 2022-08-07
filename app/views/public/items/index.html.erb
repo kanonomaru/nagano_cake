@@ -14,7 +14,13 @@
     </div>
     <div class="col-sm">
      <h3>商品一覧</h3>
-
+     <% @item.each do |item| %>
+      <div>
+        <%= image_tag item.image, size: "200x200" %>
+        <p>商品名</p>
+        <%= item.price %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -18,7 +18,7 @@ devise_for :admin, controllers: {
   end
 
 namespace :public do
-  resources  :items, :customers, :addresses, only: [:new, :show, :index, :destroy, :edit, :update, :create]
+  resources  :items, :customers, :addresses, :cart_items, only: [:new, :show, :index, :destroy, :edit, :update, :create, :unsubscribe]
 end
 
   post 'admin/genres' => 'admin#create'
